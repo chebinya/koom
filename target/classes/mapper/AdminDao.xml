@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.koom.dao.IAdminDao">
+
+<!--    新增-->
+    <insert id="addAdmin" parameterType="com.koom.entity.Admin">
+            insert into admin (account, password, createDate, status, ip) values
+            (#{account},#{password},#{createDate},#{status},#{ip})
+    </insert>
+<!--    查询所有-->
+    <select id="findAll" resultType="com.koom.entity.Admin">
+            		select *  from  Admin
+    </select>
+<!--    登录验证-->
+    <select id="checkAdmin" resultType="com.koom.entity.Admin">
+        SELECT  * from Admin where account=#{account} and password=#{password}
+    </select>
+
+</mapper>

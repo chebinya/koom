@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/admin/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../static/admin/css/style.min.css" rel="stylesheet">
+    <script src="../static/js/koom.js"></script>
+</head>
+<style>
+</style>
+<body>
+<main class="lyear-layout-content">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-toolbar clearfix">
+                        <form class="pull-right search-bar" method="get" action="#!" role="form">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <input type="hidden" name="search_field" id="search-field" value="title">
+                                    <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+                                        标题 <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="title">标题</a> </li>
+                                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="cat_name">栏目</a> </li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" value="" name="keyword" placeholder="请输入名称">
+                            </div>
+                        </form>
+                        <div class="toolbar-btn-action">
+                            <a class="btn btn-primary m-r-5 " data-toggle="modal" data-target="#exampleModal"  href="#!"><i class="mdi mdi-plus"></i> 新增</a>
+                            <a class="btn btn-success m-r-5" href="#!"><i class="mdi mdi-check"></i> 启用</a>
+                            <a class="btn btn-warning m-r-5" href="#!"><i class="mdi mdi-block-helper"></i> 禁用</a>
+                            <a class="btn btn-danger" href="#!"><i class="mdi mdi-window-close"></i> 删除</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <label class="lyear-checkbox checkbox-primary">
+                                            <input type="checkbox" id="check-all"><span></span>
+                                        </label>
+                                    </th>
+                                    <th>编号</th>
+                                    <th>账号</th>
+                                    <th>密码</th>
+                                    <th>头像</th>
+                                    <th>创建时间</th>
+                                    <th>ip地址</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbodys">
+                                </tbody>
+                            </table>
+                        </div>
+                        <ul class="pagination">
+                            <li class="disabled"><span>«</span></li>
+                            <li class="active"><span>1</span></li>
+                            <li><a href="#1">2</a></li>
+                            <li><a href="#1">3</a></li>
+                            <li><a href="#1">4</a></li>
+                            <li><a href="#1">5</a></li>
+                            <li><a href="#1">6</a></li>
+                            <li><a href="#1">7</a></li>
+                            <li><a href="#1">8</a></li>
+                            <li class="disabled"><span>...</span></li>
+                            <li><a href="#!">14452</a></li>
+                            <li><a href="#!">14453</a></li>
+                            <li><a href="#!">»</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="margin-top: 70px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">新增管理员账号</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="account" class="control-label">账号：</label>
+                        <input type="text" placeholder="请输入账号" class="form-control" id="account">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码：</label>
+                        <input type="text" placeholder="请输入密码" class="form-control" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="control-label">状态：</label>
+                        <select type="text" placeholder="请选择状态" class="form-control" id="status" size="1">
+                            <option>请选择状态</option>
+                            <option value="1">正常</option>
+                            <option value="2">异常</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ip" class="control-label">ip：</label>
+                        <input type="text" placeholder="点击获取ip"  class="form-control" id="ip">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="close">关闭</button>
+                <button type="button" class="btn btn-primary" id="save">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../static/admin/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/admin/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/admin/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="../static/admin/js/main.min.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<!--消息提示-->
+<script src="../static/admin/js/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="../static/admin/js/lightyear.js"></script>
+<script type="text/javascript" src="../static/admin/js/main.min.js"></script>
+<script type="text/javascript">
+    console.log(returnCitySN["cip"]);
+
+    //查询所有
+        $.getJSON(getRootPath() + '/kadmin/findAll.action',function (data) {
+            for (var i = 0; i <data.data.length; i++) {
+                if (data.data.length>0) {
+                    $("#tbodys").append("<tr>\n" +
+                        "                                    <td>\n" +
+                        "                                        <label class=\"lyear-checkbox checkbox-primary\">\n" +
+                        "                                            <input type=\"checkbox\" name=\"ids[]\" value="+data.data[i].id+"><span></span>\n" +
+                        "                                        </label>\n" +
+                        "                                    </td>\n" +
+                        "                                    <td>"+(i+1)+"</td>\n" +
+                        "                                    <td>"+data.data[i].account+"</td>\n" +
+                        "                                    <td>"+data.data[i].password+"</td>\n" +
+                        "                                    <td>"+data.data[i].urlAvatar+"</td>\n" +
+                        "                                    <td>"+data.data[i].createDate+"</td>\n" +
+                        "                                    <td>"+data.data[i].ip+"</td>\n" +
+                        "                                    <td><font class=\"text-success\">"+data.data[i].status+"</font></td>\n" +
+                        "                                    <td>\n" +
+                        "                                        <div class=\"btn-group\">\n" +
+                        "                                            <a class=\"btn btn-xs btn-default\" href=\"#!\" title=\"编辑\" data-toggle=\"tooltip\"><i class=\"mdi mdi-pencil\"></i></a>\n" +
+                        "                                            <a class=\"btn btn-xs btn-default\" href=\"#!\" title=\"删除\" data-toggle=\"tooltip\"><i class=\"mdi mdi-window-close\"></i></a>\n" +
+                        "                                        </div>\n" +
+                        "                                    </td>\n" +
+                        "                                </tr>")
+                }
+
+            }
+        });
+
+
+
+
+    $("#ip").click(function (){
+        $("#ip").val(returnCitySN["cip"]);
+        $('#ip').attr("disabled",true);
+    });
+
+    $("#save").click(function () {
+        var obj = new Object();
+        obj.account = $("#account").val();
+        obj.password = $("#password").val();
+        obj.status = $("#status").val();
+        obj.ip = $("#ip").val();
+        obj.createDate = new Date();
+        console.log(obj)
+
+       $.ajax({
+           url : getRootPath()+"/kadmin/add.action",
+           type : 'post',
+           dataType:'json',
+            data : obj,
+           success:function (res) {
+               console.log(res)
+               console.log(res.status)
+               if (res.flag=true){
+                   lightyear.notify(res.msg, 'success', 5000, 'mdi mdi-emoticon-happy', 'bottom', 'center');
+                   $("#exampleModal").modal('hide');
+               } else {
+                   lightyear.notify(res.msg, 'danger', 5000, 'mdi mdi-emoticon-happy', 'bottom', 'center');
+               }
+           }
+
+       })
+    });
+
+
+
+
+</script>
+</body>
+</html>
